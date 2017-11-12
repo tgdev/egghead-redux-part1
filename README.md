@@ -1,7 +1,6 @@
 # Getting started with Redux
 
-Dan Abramov's "Getting started with Redux" course on egghead.io.
-[https://egghead.io/courses/getting-started-with-redux](https://egghead.io/courses/getting-started-with-redux)
+Dan Abramov's course on [egghead.io](https://egghead.io/courses/getting-started-with-redux).
 
 ### Dependencies
 
