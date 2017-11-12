@@ -1,0 +1,50 @@
+{
+  "name": "egghead-redux-part1",
+  "version": "0.1.0",
+  "description": "A repo to help document my progress to Dan Abramov's Getting started with Redux course on egghead.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently -k -r -s first \"yarn test:watch\" \"yarn serve\"",
+    "serve": "webpack-dev-server --open --config webpack.config.dev.js",
+    "build": "yarn test && yarn webpack --config webpack.config.prod.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint",
+    "lint:watch": "eslint --watch",
+    "lint:quiet": "eslint -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Tom Gillard",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/tgdev/modern-js-starter#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chalk": "^2.3.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "concurrently": "^3.5.0",
+    "eslint": "^4.11.0",
+    "eslint-loader": "^1.9.0",
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
+    "prompt": "^1.0.0",
+    "replace": "^0.3.0",
+    "rimraf": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {}
+}
