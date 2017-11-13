@@ -15,7 +15,10 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['*', '.js']
+    extensions: ['*', '.js'],
+    alias: {
+      constants: path.resolve(__dirname, 'src/constants')
+    }
   },
   module: {
     rules: [
