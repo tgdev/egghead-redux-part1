@@ -4,7 +4,7 @@ import todos from './todos.reducer';
 
 describe('Todos Reducer', () => {
 
-  describe('Add Todo', () => {
+  describe('Add Todos', () => {
     const stateBefore = [];
     const action = {
       type: ACTION_ADD_TODO,
@@ -23,7 +23,7 @@ describe('Todos Reducer', () => {
     deepFreeze(stateBefore);
     deepFreeze(action);
 
-    it('should add a todo to a new state object', () => {
+    it('Adds a todo to a new state array', () => {
       expect(
         todos(stateBefore, action)
       ).toEqual(stateAfter);
@@ -31,7 +31,7 @@ describe('Todos Reducer', () => {
 
   });
 
-  describe('Toggle Todo', () => {
+  describe('Toggle Todos', () => {
     const stateBefore = [
       {
         id: 0,
@@ -65,7 +65,7 @@ describe('Todos Reducer', () => {
     deepFreeze(stateBefore);
     deepFreeze(action);
 
-    it('should toggle the completed attribute of a todo based on id', () => {
+    it('Toggles the completed attribute of a todo based on id', () => {
       expect(
         todos(stateBefore, action)
       ).toEqual(stateAfter);
