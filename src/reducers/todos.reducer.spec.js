@@ -1,5 +1,7 @@
 import deepFreeze from 'deep-freeze';
+
 import { ACTION_ADD_TODO, ACTION_TOGGLE_TODO } from '../constants/action-types';
+
 import todos from './todos.reducer';
 
 describe('Todos Reducer', () => {

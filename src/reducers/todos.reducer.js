@@ -9,8 +9,6 @@ const todos = (state = [], action) => {
       todo(undefined, action)
     ];
   case ACTION_TOGGLE_TODO:
-    // find todo with matching id
-    // update it's completed field to opposite of current value
     return state.map(td => todo(td, action));
   default:
     return state;
