@@ -15,7 +15,7 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['*', '.js'],
+    extensions: ['*', '.js', 'jsx'],
     alias: {
       constants: path.resolve(__dirname, 'src/constants')
     }
@@ -24,7 +24,7 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'eslint-loader',
         options: {
@@ -33,7 +33,7 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader?cacheDirectory=true'
