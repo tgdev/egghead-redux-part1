@@ -2,11 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const resolve = name => path.join(__dirname, name);
+
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: resolve('dist')
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -15,9 +17,10 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['*', '.js', 'jsx'],
+    extensions: ['*', '.js', '.jsx'],
     alias: {
-      constants: path.resolve(__dirname, 'src/constants')
+      components: resolve('./src/components/'),
+      constants: resolve('./src/constants/')
     }
   },
   module: {

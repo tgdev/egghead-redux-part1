@@ -15,8 +15,15 @@
     "lint:quiet": "eslint -s"
   },
   "jest": {
-    "setupFiles": ["./jest-setup.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "setupFiles": [
+      "./jest-setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^constants(.*)$": "<rootDir>/src/constants/$1"
+    }
   },
   "repository": {
     "type": "git",
@@ -42,6 +49,9 @@
     "clean-webpack-plugin": "^0.1.17",
     "concurrently": "^3.5.0",
     "deep-freeze": "^0.0.1",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-16": "^1.0.4",
+    "enzyme-to-json": "^3.2.2",
     "eslint": "^4.11.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-react": "^7.4.0",

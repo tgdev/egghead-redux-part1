@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders TodoApp correctly with no todos 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    Add Todo
+  </button>
+  <ul />
+</div>
+`;
+
+exports[`App component renders TodoApp correctly with saved todos 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    Add Todo
+  </button>
+  <ul>
+    <li
+      key="0"
+    >
+      Learn Redux
+    </li>
+    <li
+      key="1"
+    >
+      Master Redux
+    </li>
+  </ul>
+</div>
+`;
