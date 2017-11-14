@@ -1,4 +1,5 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 
 import App from './App';
 
@@ -17,13 +18,13 @@ describe('App component', () => {
   ];
 
   it('renders TodoApp correctly with no todos', () => {
-    const wrapper = global.shallow(<App todos={[]} />);
+    const wrapper = shallow(<App todos={[]} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.instance().props.todos.length).toEqual(0);
   });
 
   it('renders TodoApp correctly with saved todos', () => {
-    const wrapper = global.shallow(<App todos={mockTodos} />);
+    const wrapper = shallow(<App todos={mockTodos} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.instance().props.todos.length).toEqual(2);
   });
