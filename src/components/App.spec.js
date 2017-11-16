@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import { FILTER_OPTION_ALL } from 'constants/visibility-filter-options';
 
@@ -27,16 +27,23 @@ describe('App component', () => {
     expect(wrapper.instance().props.todos.length).toEqual(2);
   });
 
-  // it('adds a todo when button is clicked', () => {
-  //   const wrapper = mount(<App todos={[]} />);
-  //   wrapper.find('button').simulate('click', { store.dispatch()});
-  //   wrapper.update();
-  //   expect(wrapper.instance().props.todos.length).toEqual(1);
-  // });
-
   it('renders a completed todo with line-through', () => {
     const wrapper = shallow(<App todos={altMockTodos} visibilityFilter={mockVisibiltyFilter} />);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('triggers handleAddTodo when "Add Todo" button is clicked', () => {
+    const handleAddTodo = jest.spyOn(App.prototype, 'handleAddTodo');
+    const wrapper = mount(<App todos={[]} visibilityFilter={mockVisibiltyFilter} />);
+    wrapper.find('button').first().simulate('click');
+    expect(handleAddTodo).toHaveBeenCalledTimes(1);
+  });
+
+  it('triggers handleToggleTodo when todo item is clicked', () => {
+    const handleToggleTodo = jest.spyOn(App.prototype, 'handleToggleTodo');
+    const wrapper = mount(<App todos={mockTodos} visibilityFilter={mockVisibiltyFilter} />);
+    wrapper.find('li').first().simulate('click');
+    expect(handleToggleTodo).toHaveBeenCalledTimes(1);
   });
 
 });

@@ -13,6 +13,27 @@ import FilterLink from './FilterLink/FilterLink';
 let nextTodoId = 0;
 
 class TodoApp extends Component {
+  constructor() {
+    super();
+    this.handleAddTodo = this.handleAddTodo.bind(this);
+    this.handleToggleTodo = this.handleToggleTodo.bind(this);
+  }
+
+  handleAddTodo() {
+    store.dispatch({
+      type: ACTION_ADD_TODO,
+      id: nextTodoId++,
+      text: this.input.value
+    });
+    this.input.value = '';
+  }
+
+  handleToggleTodo(id) {
+    store.dispatch({
+      type: ACTION_TOGGLE_TODO,
+      id: id
+    });
+  }
 
   render() {
     const { todos, visibilityFilter } = this.props;
@@ -23,14 +44,7 @@ class TodoApp extends Component {
 
         <input type="text" ref={node => { this.input = node; }} />
         <button
-          onClick={() => {
-            store.dispatch({
-              type: ACTION_ADD_TODO,
-              id: nextTodoId++,
-              text: this.input.value
-            });
-            this.input.value = '';
-          }}
+          onClick={this.handleAddTodo}
         >
           Add Todo
         </button>
@@ -39,12 +53,7 @@ class TodoApp extends Component {
           {visibleTodos.map(todo => {
             return (
               <li key={todo.id}
-                onClick={() => {
-                  store.dispatch({
-                    type: ACTION_TOGGLE_TODO,
-                    id: todo.id
-                  });
-                }}
+                onClick={() => this.handleToggleTodo(todo.id)}
                 style={{
                   textDecoration: todo.completed ? 'line-through' : 'none'
                 }} >
