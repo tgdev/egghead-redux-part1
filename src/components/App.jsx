@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { ACTION_ADD_TODO } from 'constants/action-types';
+import { ACTION_ADD_TODO, ACTION_TOGGLE_TODO } from 'constants/action-types';
 import store from '../store';
 
 let nextTodoId = 0;
@@ -27,7 +27,16 @@ class TodoApp extends Component {
         <ul>
           {this.props.todos.map(todo => {
             return (
-              <li key={todo.id}>
+              <li key={todo.id}
+                onClick={() => {
+                  store.dispatch({
+                    type: ACTION_TOGGLE_TODO,
+                    id: todo.id
+                  });
+                }}
+                style={{
+                  textDecoration: todo.completed ? 'line-through' : 'none'
+                }} >
                 {todo.text}
               </li>
             );

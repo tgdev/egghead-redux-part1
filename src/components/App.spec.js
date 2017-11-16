@@ -17,6 +17,18 @@ describe('App component', () => {
     }
   ];
 
+  const altMockTodos = [
+    {
+      id: 0,
+      text: 'Learn Redux',
+      completed: true
+    }, {
+      id: 1,
+      text: 'Master Redux',
+      completed: false
+    }
+  ];
+
   it('renders TodoApp correctly with no todos', () => {
     const wrapper = shallow(<App todos={[]} />);
     expect(wrapper).toMatchSnapshot();
@@ -35,5 +47,10 @@ describe('App component', () => {
   //   wrapper.update();
   //   expect(wrapper.instance().props.todos.length).toEqual(1);
   // });
+
+  it('renders a completed todo with line-through', () => {
+    const wrapper = shallow(<App todos={altMockTodos} />);
+    expect(wrapper).toMatchSnapshot();
+  });
 
 });

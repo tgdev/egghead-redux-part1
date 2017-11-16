@@ -27,11 +27,60 @@ exports[`App component renders TodoApp correctly with saved todos 1`] = `
   <ul>
     <li
       key="0"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
       Learn Redux
     </li>
     <li
       key="1"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      Master Redux
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`App component renders a completed todo with line-through 1`] = `
+<div>
+  <input
+    type="text"
+  />
+  <button
+    onClick={[Function]}
+  >
+    Add Todo
+  </button>
+  <ul>
+    <li
+      key="0"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "line-through",
+        }
+      }
+    >
+      Learn Redux
+    </li>
+    <li
+      key="1"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
       Master Redux
     </li>
