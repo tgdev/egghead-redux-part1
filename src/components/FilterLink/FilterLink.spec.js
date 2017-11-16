@@ -21,7 +21,7 @@ describe('FilterLink component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders FilterLink with children', () => {
+  it('renders with required children', () => {
     const wrapper = shallow(
       <FilterLink
         filter={mockFilterOption}
@@ -32,7 +32,7 @@ describe('FilterLink component', () => {
     expect(wrapper.children().length).toBe(1);
   });
 
-  it('renders FilterLink with filter and currentFilter props', () => {
+  it('renders with required filter and currentFilter props', () => {
     const wrapper = mount(
       <FilterLink
         filter={mockFilterOption}
@@ -57,12 +57,17 @@ describe('FilterLink component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  // it('triggers a function when clicked', () => {
-  //   const wrapper = shallow(<FilterLink filter={mockFilterOption}>All</FilterLink>);
-  //   const link = wrapper.find('a');
-  //   const mockEvent = { preventDefault: jest.fn() };
-  //   link.simulate('click', mockEvent);
-  //   expect(link).toHaveBeenCalledTimes(1);
-  // });
+  it('triggers handleSetFilter when filter button is clicked', () => {
+    const handleSetFilter = jest.spyOn(FilterLink.prototype, 'handleSetFilter');
+    const wrapper = mount(
+      <FilterLink
+        filter={mockFilterOption}
+        currentFilter={FILTER_OPTION_ACTIVE}>
+        All
+      </FilterLink>
+    );
+    wrapper.find('button').simulate('click');
+    expect(handleSetFilter).toHaveBeenCalledTimes(1);
+  });
 
 });
