@@ -29,6 +29,13 @@ describe('Todo Reducer', () => {
       ).toEqual(stateAfter);
     });
 
+    it('Returns default object if action type is invalid', () => {
+      const invalidAction = { type: null };
+      expect(
+        todo(stateBefore, invalidAction)
+      ).toEqual(stateBefore);
+    });
+
   });
 
   describe('Toggle Todo', () => {

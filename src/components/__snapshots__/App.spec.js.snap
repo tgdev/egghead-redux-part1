@@ -15,16 +15,19 @@ exports[`App component renders TodoApp correctly with no todos 1`] = `
     Show:
      
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_ALL"
     >
       All
     </FilterLink>
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_ACTIVE"
     >
       Active
     </FilterLink>
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_COMPLETED"
     >
       Completed
@@ -71,16 +74,19 @@ exports[`App component renders TodoApp correctly with saved todos 1`] = `
     Show:
      
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_ALL"
     >
       All
     </FilterLink>
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_ACTIVE"
     >
       Active
     </FilterLink>
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_COMPLETED"
     >
       Completed
@@ -127,16 +133,19 @@ exports[`App component renders a completed todo with line-through 1`] = `
     Show:
      
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_ALL"
     >
       All
     </FilterLink>
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_ACTIVE"
     >
       Active
     </FilterLink>
     <FilterLink
+      currentFilter="SHOW_ALL"
       filter="SHOW_COMPLETED"
     >
       Completed

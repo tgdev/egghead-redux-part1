@@ -5,7 +5,11 @@ import { ACTION_SET_VISIBILITY_FILTER } from 'constants/action-types';
 
 import store from '../../store';
 
-const FilterLink = ({ filter, children }) => {
+const FilterLink = ({ filter, children, currentFilter }) => {
+  if (filter === currentFilter) {
+    return <span>{children}</span>;
+  }
+
   return (
     <button onClick={() => {
       store.dispatch({
@@ -20,7 +24,8 @@ const FilterLink = ({ filter, children }) => {
 
 FilterLink.propTypes = {
   filter: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired
+  children: PropTypes.string.isRequired,
+  currentFilter: PropTypes.string.isRequired
 };
 
 export default FilterLink;

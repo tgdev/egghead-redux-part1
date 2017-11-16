@@ -12,6 +12,11 @@ describe('getVisibleTodos()', () => {
   deepFreeze(mockTodos);
 
   it('returns all todos by default', () => {
+    const visibleTodos = getVisibleTodos(mockTodos);
+    expect(visibleTodos.length).toEqual(4);
+  });
+
+  it('returns all todos when filter is set to SHOW_ALL', () => {
     const visibleTodos = getVisibleTodos(mockTodos, FILTER_OPTION_ALL);
     expect(visibleTodos.length).toEqual(4);
   });

@@ -56,9 +56,21 @@ class TodoApp extends Component {
 
         <p>Show:
           {' '}
-          <FilterLink filter={FILTER_OPTION_ALL}>All</FilterLink>
-          <FilterLink filter={FILTER_OPTION_ACTIVE}>Active</FilterLink>
-          <FilterLink filter={FILTER_OPTION_COMPLETED}>Completed</FilterLink>
+          <FilterLink
+            filter={FILTER_OPTION_ALL}
+            currentFilter={visibilityFilter}>
+            All
+          </FilterLink>
+          <FilterLink
+            filter={FILTER_OPTION_ACTIVE}
+            currentFilter={visibilityFilter}>
+            Active
+          </FilterLink>
+          <FilterLink
+            filter={FILTER_OPTION_COMPLETED}
+            currentFilter={visibilityFilter}>
+            Completed
+          </FilterLink>
         </p>
 
       </div>
