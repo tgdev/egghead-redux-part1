@@ -1,19 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FilterLink component renders FilterLink correctly 1`] = `
-<a
-  href="#"
+<button
   onClick={[Function]}
 >
   All
-</a>
-`;
-
-exports[`FilterLink component renders FilterLink with children 1`] = `
-<a
-  href="#"
-  onClick={[Function]}
->
-  All
-</a>
+</button>
 `;

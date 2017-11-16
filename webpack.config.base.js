@@ -20,7 +20,8 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
     alias: {
       components: resolve('./src/components/'),
-      constants: resolve('./src/constants/')
+      constants: resolve('./src/constants/'),
+      utils: resolve('./src/utils/')
     }
   },
   module: {

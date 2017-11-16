@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import { FILTER_OPTION_ALL } from 'constants/visibility-filter-options';
+
 import App from './App';
 
 describe('App component', () => {
@@ -29,14 +31,16 @@ describe('App component', () => {
     }
   ];
 
+  const mockVisibiltyFilter = FILTER_OPTION_ALL;
+
   it('renders TodoApp correctly with no todos', () => {
-    const wrapper = shallow(<App todos={[]} />);
+    const wrapper = shallow(<App todos={[]} visibilityFilter={mockVisibiltyFilter} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.instance().props.todos.length).toEqual(0);
   });
 
   it('renders TodoApp correctly with saved todos', () => {
-    const wrapper = shallow(<App todos={mockTodos} />);
+    const wrapper = shallow(<App todos={mockTodos} visibilityFilter={mockVisibiltyFilter} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.instance().props.todos.length).toEqual(2);
   });
@@ -49,7 +53,7 @@ describe('App component', () => {
   // });
 
   it('renders a completed todo with line-through', () => {
-    const wrapper = shallow(<App todos={altMockTodos} />);
+    const wrapper = shallow(<App todos={altMockTodos} visibilityFilter={mockVisibiltyFilter} />);
     expect(wrapper).toMatchSnapshot();
   });
 

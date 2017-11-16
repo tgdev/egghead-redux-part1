@@ -16,8 +16,21 @@ describe('FilterLink component', () => {
 
   it('renders FilterLink with children', () => {
     const wrapper = shallow(<FilterLink filter={mockFilterOption}>All</FilterLink>);
-    expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find('a').children().length).toBe(1);
+    expect(wrapper.children().length).toBe(1);
   });
+
+  // it('renders FilterLink with filter prop', () => {
+  //   const wrapper = shallow(<FilterLink filter={mockFilterOption}>All</FilterLink>);
+  //   const filterProp = wrapper.instance().props.filter;
+  //   expect(filterProp).toEqual(FILTER_OPTION_ALL);
+  // });
+
+  // it('triggers a function when clicked', () => {
+  //   const wrapper = shallow(<FilterLink filter={mockFilterOption}>All</FilterLink>);
+  //   const link = wrapper.find('a');
+  //   const mockEvent = { preventDefault: jest.fn() };
+  //   link.simulate('click', mockEvent);
+  //   expect(link).toHaveBeenCalledTimes(1);
+  // });
 
 });

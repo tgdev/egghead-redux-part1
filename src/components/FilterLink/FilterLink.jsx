@@ -7,15 +7,14 @@ import store from '../../store';
 
 const FilterLink = ({ filter, children }) => {
   return (
-    <a href="#" onClick={e => {
-      e.preventDefault();
+    <button onClick={() => {
       store.dispatch({
         type: ACTION_SET_VISIBILITY_FILTER,
         filter
       });
     }}>
       {children}
-    </a>
+    </button>
   );
 };
 

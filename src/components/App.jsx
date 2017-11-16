@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { ACTION_ADD_TODO, ACTION_TOGGLE_TODO } from 'constants/action-types';
-import { FILTER_OPTION_ALL, FILTER_OPTION_ACTIVE, FILTER_OPTION_COMPLETE } from 'constants/visibility-filter-options';
+import { FILTER_OPTION_ALL, FILTER_OPTION_ACTIVE, FILTER_OPTION_COMPLETED } from 'constants/visibility-filter-options';
+
+import getVisibleTodos from 'utils/get-visible-todos';
 
 import store from '../store';
 
@@ -13,6 +15,9 @@ let nextTodoId = 0;
 class TodoApp extends Component {
 
   render() {
+    const { todos, visibilityFilter } = this.props;
+    const visibleTodos = getVisibleTodos(todos, visibilityFilter);
+
     return (
       <div>
 
@@ -31,7 +36,7 @@ class TodoApp extends Component {
         </button>
 
         <ul>
-          {this.props.todos.map(todo => {
+          {visibleTodos.map(todo => {
             return (
               <li key={todo.id}
                 onClick={() => {
@@ -53,7 +58,7 @@ class TodoApp extends Component {
           {' '}
           <FilterLink filter={FILTER_OPTION_ALL}>All</FilterLink>
           <FilterLink filter={FILTER_OPTION_ACTIVE}>Active</FilterLink>
-          <FilterLink filter={FILTER_OPTION_COMPLETE}>Completed</FilterLink>
+          <FilterLink filter={FILTER_OPTION_COMPLETED}>Completed</FilterLink>
         </p>
 
       </div>
@@ -66,7 +71,8 @@ TodoApp.propTypes = {
     id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     completed: PropTypes.oneOf([true, false])
-  })).isRequired
+  })).isRequired,
+  visibilityFilter: PropTypes.string.isRequired
 };
 
 export default TodoApp;
