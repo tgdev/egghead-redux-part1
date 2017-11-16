@@ -21,8 +21,10 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
+    "moduleFileExtensions": ["js", "jsx"],
     "moduleNameMapper": {
-      "^constants(.*)$": "<rootDir>/src/constants/$1"
+      "^constants(.*)": "<rootDir>/src/constants/$1",
+      "^components/(.*)": "<rootDir>/src/components/$2"
     }
   },
   "repository": {

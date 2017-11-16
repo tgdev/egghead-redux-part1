@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { ACTION_ADD_TODO, ACTION_TOGGLE_TODO } from 'constants/action-types';
+import { FILTER_OPTION_ALL, FILTER_OPTION_ACTIVE, FILTER_OPTION_COMPLETE } from 'constants/visibility-filter-options';
+
 import store from '../store';
+
+import FilterLink from './FilterLink/FilterLink';
 
 let nextTodoId = 0;
 
@@ -11,6 +15,7 @@ class TodoApp extends Component {
   render() {
     return (
       <div>
+
         <input type="text" ref={node => { this.input = node; }} />
         <button
           onClick={() => {
@@ -24,6 +29,7 @@ class TodoApp extends Component {
         >
           Add Todo
         </button>
+
         <ul>
           {this.props.todos.map(todo => {
             return (
@@ -42,6 +48,14 @@ class TodoApp extends Component {
             );
           })}
         </ul>
+
+        <p>Show:
+          {' '}
+          <FilterLink filter={FILTER_OPTION_ALL}>All</FilterLink>
+          <FilterLink filter={FILTER_OPTION_ACTIVE}>Active</FilterLink>
+          <FilterLink filter={FILTER_OPTION_COMPLETE}>Completed</FilterLink>
+        </p>
+
       </div>
     );
   }
