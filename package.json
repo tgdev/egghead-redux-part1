@@ -23,8 +23,9 @@
     ],
     "moduleFileExtensions": ["js", "jsx"],
     "moduleNameMapper": {
-      "^constants(.*)": "<rootDir>/src/constants/$1",
       "^components/(.*)": "<rootDir>/src/components/$1",
+      "^constants(.*)": "<rootDir>/src/constants/$1",
+      "^mocks/(.*)": "<rootDir>/src/mocks/$1",
       "^utils/(.*)": "<rootDir>/src/utils/$1"
     }
   },

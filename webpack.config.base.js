@@ -21,6 +21,7 @@ module.exports = {
     alias: {
       components: resolve('./src/components/'),
       constants: resolve('./src/constants/'),
+      mocks: resolve('./src/mocks/'),
       utils: resolve('./src/utils/')
     }
   },

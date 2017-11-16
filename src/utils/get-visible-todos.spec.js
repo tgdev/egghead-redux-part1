@@ -2,33 +2,13 @@ import deepFreeze from 'deep-freeze';
 
 import { FILTER_OPTION_ALL, FILTER_OPTION_ACTIVE, FILTER_OPTION_COMPLETED } from 'constants/visibility-filter-options';
 
+import multipleTodosMock from 'mocks/multiple-todos.mock';
+
 import getVisibleTodos from './get-visible-todos';
 
 describe('getVisibleTodos()', () => {
 
-  const mockTodos = [
-    {
-      id: 0,
-      text: 'todo1',
-      completed: false
-    },
-    {
-      id: 1,
-      text: 'todo2',
-      completed: true
-    },
-    {
-      id: 2,
-      text: 'todo3',
-      completed: true
-    },
-    {
-      id: 3,
-      text: 'todo4',
-      completed: false
-    }
-  ];
-
+  const mockTodos = multipleTodosMock;
   deepFreeze(mockTodos);
 
   it('returns all todos by default', () => {

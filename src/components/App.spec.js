@@ -3,33 +3,15 @@ import { shallow } from 'enzyme';
 
 import { FILTER_OPTION_ALL } from 'constants/visibility-filter-options';
 
+import newTodosMock from 'mocks/new-todos.mock';
+import updatedTodosMock from 'mocks/updated-todos.mock';
+
 import App from './App';
 
 describe('App component', () => {
 
-  const mockTodos = [
-    {
-      id: 0,
-      text: 'Learn Redux',
-      completed: false
-    }, {
-      id: 1,
-      text: 'Master Redux',
-      completed: false
-    }
-  ];
-
-  const altMockTodos = [
-    {
-      id: 0,
-      text: 'Learn Redux',
-      completed: true
-    }, {
-      id: 1,
-      text: 'Master Redux',
-      completed: false
-    }
-  ];
+  const mockTodos = newTodosMock;
+  const altMockTodos = updatedTodosMock;
 
   const mockVisibiltyFilter = FILTER_OPTION_ALL;
 
