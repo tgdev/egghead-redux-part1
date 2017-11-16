@@ -29,4 +29,11 @@ describe('App component', () => {
     expect(wrapper.instance().props.todos.length).toEqual(2);
   });
 
+  // it('adds a todo when button is clicked', () => {
+  //   const wrapper = mount(<App todos={[]} />);
+  //   wrapper.find('button').simulate('click', { store.dispatch()});
+  //   wrapper.update();
+  //   expect(wrapper.instance().props.todos.length).toEqual(1);
+  // });
+
 });

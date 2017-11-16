@@ -5,12 +5,10 @@ import ReactDOM from 'react-dom';
 import store from './store';
 import TodoApp from './components/App';
 
-const appRoot = document.getElementById('root');
-
 const render = () => {
   ReactDOM.render(
     <TodoApp todos={store.getState().todos} />,
-    appRoot
+    document.getElementById('root')
   );
 };
 

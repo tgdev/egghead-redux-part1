@@ -2,6 +2,9 @@
 
 exports[`App component renders TodoApp correctly with no todos 1`] = `
 <div>
+  <input
+    type="text"
+  />
   <button
     onClick={[Function]}
   >
@@ -13,6 +16,9 @@ exports[`App component renders TodoApp correctly with no todos 1`] = `
 
 exports[`App component renders TodoApp correctly with saved todos 1`] = `
 <div>
+  <input
+    type="text"
+  />
   <button
     onClick={[Function]}
   >
