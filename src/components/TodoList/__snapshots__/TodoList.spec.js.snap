@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList component renders TodoList correctly 1`] = `
+<ul>
+  <Todo
+    completed={false}
+    handleTodo={[Function]}
+    id={0}
+    key="0"
+    text="Learn Redux"
+  />
+  <Todo
+    completed={false}
+    handleTodo={[Function]}
+    id={1}
+    key="1"
+    text="Master Redux"
+  />
+</ul>
+`;

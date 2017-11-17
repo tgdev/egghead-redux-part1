@@ -10,7 +10,10 @@ exports[`App component renders TodoApp correctly with no todos 1`] = `
   >
     Add Todo
   </button>
-  <ul />
+  <TodoList
+    handleTodos={[Function]}
+    todos={Array []}
+  />
   <p>
     Show:
      
@@ -46,89 +49,23 @@ exports[`App component renders TodoApp correctly with saved todos 1`] = `
   >
     Add Todo
   </button>
-  <ul>
-    <li
-      key="0"
-      onClick={[Function]}
-      style={
+  <TodoList
+    handleTodos={[Function]}
+    todos={
+      Array [
         Object {
-          "textDecoration": "none",
-        }
-      }
-    >
-      Learn Redux
-    </li>
-    <li
-      key="1"
-      onClick={[Function]}
-      style={
+          "completed": false,
+          "id": 0,
+          "text": "Learn Redux",
+        },
         Object {
-          "textDecoration": "none",
-        }
-      }
-    >
-      Master Redux
-    </li>
-  </ul>
-  <p>
-    Show:
-     
-    <FilterLink
-      currentFilter="SHOW_ALL"
-      filter="SHOW_ALL"
-    >
-      All
-    </FilterLink>
-    <FilterLink
-      currentFilter="SHOW_ALL"
-      filter="SHOW_ACTIVE"
-    >
-      Active
-    </FilterLink>
-    <FilterLink
-      currentFilter="SHOW_ALL"
-      filter="SHOW_COMPLETED"
-    >
-      Completed
-    </FilterLink>
-  </p>
-</div>
-`;
-
-exports[`App component renders a completed todo with line-through 1`] = `
-<div>
-  <input
-    type="text"
+          "completed": false,
+          "id": 1,
+          "text": "Master Redux",
+        },
+      ]
+    }
   />
-  <button
-    onClick={[Function]}
-  >
-    Add Todo
-  </button>
-  <ul>
-    <li
-      key="0"
-      onClick={[Function]}
-      style={
-        Object {
-          "textDecoration": "line-through",
-        }
-      }
-    >
-      Learn Redux
-    </li>
-    <li
-      key="1"
-      onClick={[Function]}
-      style={
-        Object {
-          "textDecoration": "none",
-        }
-      }
-    >
-      Master Redux
-    </li>
-  </ul>
   <p>
     Show:
      

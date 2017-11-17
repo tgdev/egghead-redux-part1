@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo component renders Todo correctly 1`] = `
+<li
+  onClick={[Function]}
+  style={
+    Object {
+      "textDecoration": "none",
+    }
+  }
+>
+  Learn redux
+</li>
+`;
+
+exports[`Todo component renders a completed todo with line-through 1`] = `
+<li
+  onClick={[Function]}
+  style={
+    Object {
+      "textDecoration": "line-through",
+    }
+  }
+>
+  Learn redux
+</li>
+`;

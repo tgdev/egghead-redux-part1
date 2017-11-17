@@ -8,6 +8,7 @@ import getVisibleTodos from 'utils/get-visible-todos';
 
 import store from '../store';
 
+import TodoList from './TodoList/TodoList';
 import FilterLink from './FilterLink/FilterLink';
 
 let nextTodoId = 0;
@@ -49,19 +50,9 @@ class TodoApp extends Component {
           Add Todo
         </button>
 
-        <ul>
-          {visibleTodos.map(todo => {
-            return (
-              <li key={todo.id}
-                onClick={() => this.handleToggleTodo(todo.id)}
-                style={{
-                  textDecoration: todo.completed ? 'line-through' : 'none'
-                }} >
-                {todo.text}
-              </li>
-            );
-          })}
-        </ul>
+        <TodoList
+          todos={visibleTodos}
+          handleTodos={this.handleToggleTodo} />
 
         <p>Show:
           {' '}
