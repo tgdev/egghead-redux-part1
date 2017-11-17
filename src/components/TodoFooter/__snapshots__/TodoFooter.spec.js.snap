@@ -11,6 +11,7 @@ exports[`TodoFooter component renders TodoFooter correctly 1`] = `
   >
     All
   </FilterLink>
+   
   <FilterLink
     currentFilter="SHOW_ALL"
     filter="SHOW_ACTIVE"
@@ -18,6 +19,7 @@ exports[`TodoFooter component renders TodoFooter correctly 1`] = `
   >
     Active
   </FilterLink>
+   
   <FilterLink
     currentFilter="SHOW_ALL"
     filter="SHOW_COMPLETED"
