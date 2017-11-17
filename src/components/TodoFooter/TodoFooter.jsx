@@ -15,12 +15,14 @@ const TodoFooter = ({ visibilityFilter, handleFilters }) => {
         handleFilter={handleFilters}>
         All
       </FilterLink>
+      {' '}
       <FilterLink
         filter={FILTER_OPTION_ACTIVE}
         currentFilter={visibilityFilter}
         handleFilter={handleFilters}>
         Active
       </FilterLink>
+      {' '}
       <FilterLink
         filter={FILTER_OPTION_COMPLETED}
         currentFilter={visibilityFilter}
