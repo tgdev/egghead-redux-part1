@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import { FILTER_OPTION_ALL } from 'constants/visibility-filter-options';
 
@@ -23,21 +23,6 @@ describe('App component', () => {
     const wrapper = shallow(<App todos={mockTodos} visibilityFilter={mockVisibiltyFilter} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.instance().props.todos.length).toEqual(2);
-  });
-
-  it('triggers handleAddTodo when "Add Todo" button is clicked', () => {
-    const handleAddTodo = jest.spyOn(App.prototype, 'handleAddTodo');
-    const wrapper = mount(<App todos={[]} visibilityFilter={mockVisibiltyFilter} />);
-    wrapper.find('button').first().simulate('click');
-    expect(handleAddTodo).toHaveBeenCalledTimes(1);
-  });
-
-  // TODO: Move test to Todo.spec.js?
-  it('triggers handleToggleTodo when todo item is clicked', () => {
-    const handleToggleTodo = jest.spyOn(App.prototype, 'handleToggleTodo');
-    const wrapper = mount(<App todos={mockTodos} visibilityFilter={mockVisibiltyFilter} />);
-    wrapper.find('li').first().simulate('click');
-    expect(handleToggleTodo).toHaveBeenCalledTimes(1);
   });
 
 });

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTodo component renders AddTodo correctly 1`] = `
+Array [
+  <input
+    key="add-todo-input"
+    type="text"
+  />,
+  <button
+    key="add-todo-btn"
+    onClick={[Function]}
+  />,
+]
+`;

@@ -8,6 +8,7 @@ import getVisibleTodos from 'utils/get-visible-todos';
 
 import store from '../store';
 
+import AddTodo from './AddTodo/AddTodo';
 import TodoList from './TodoList/TodoList';
 import FilterLink from './FilterLink/FilterLink';
 
@@ -20,13 +21,13 @@ class TodoApp extends Component {
     this.handleToggleTodo = this.handleToggleTodo.bind(this);
   }
 
-  handleAddTodo() {
+  handleAddTodo(input) {
     store.dispatch({
       type: ACTION_ADD_TODO,
       id: nextTodoId++,
-      text: this.input.value
+      text: input.value
     });
-    this.input.value = '';
+    input.value = '';
   }
 
   handleToggleTodo(id) {
@@ -43,12 +44,7 @@ class TodoApp extends Component {
     return (
       <div>
 
-        <input type="text" ref={node => { this.input = node; }} />
-        <button
-          onClick={this.handleAddTodo}
-        >
-          Add Todo
-        </button>
+        <AddTodo handleAddTodo={this.handleAddTodo} />
 
         <TodoList
           todos={visibleTodos}
