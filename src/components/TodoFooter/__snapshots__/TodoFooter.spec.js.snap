@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoFooter component renders TodoFooter correctly 1`] = `
+<p>
+  Show:
+   
+  <FilterLink
+    currentFilter="SHOW_ALL"
+    filter="SHOW_ALL"
+    handleFilter={[Function]}
+  >
+    All
+  </FilterLink>
+  <FilterLink
+    currentFilter="SHOW_ALL"
+    filter="SHOW_ACTIVE"
+    handleFilter={[Function]}
+  >
+    Active
+  </FilterLink>
+  <FilterLink
+    currentFilter="SHOW_ALL"
+    filter="SHOW_COMPLETED"
+    handleFilter={[Function]}
+  >
+    Completed
+  </FilterLink>
+</p>
+`;

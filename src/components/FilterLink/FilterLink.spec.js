@@ -10,11 +10,18 @@ describe('FilterLink component', () => {
   const mockFilterOption = FILTER_OPTION_ALL;
   const mockCurrentFilter = FILTER_OPTION_ALL;
 
+  let mockClickHandler = jest.fn();
+
+  afterEach(() => {
+    mockClickHandler.mockReset();
+  });
+
   it('renders FilterLink correctly', () => {
     const wrapper = shallow(
       <FilterLink
         filter={mockFilterOption}
-        currentFilter={mockCurrentFilter}>
+        currentFilter={mockCurrentFilter}
+        handleFilter={mockClickHandler}>
         All
       </FilterLink>
     );
@@ -25,7 +32,8 @@ describe('FilterLink component', () => {
     const wrapper = shallow(
       <FilterLink
         filter={mockFilterOption}
-        currentFilter={mockCurrentFilter}>
+        currentFilter={mockCurrentFilter}
+        handleFilter={mockClickHandler}>
         All
       </FilterLink>
     );
@@ -36,7 +44,8 @@ describe('FilterLink component', () => {
     const wrapper = mount(
       <FilterLink
         filter={mockFilterOption}
-        currentFilter={mockCurrentFilter}>
+        currentFilter={mockCurrentFilter}
+        handleFilter={mockClickHandler}>
         All
       </FilterLink>
     );
@@ -50,24 +59,25 @@ describe('FilterLink component', () => {
     const wrapper = shallow(
       <FilterLink
         filter={mockFilterOption}
-        currentFilter={FILTER_OPTION_ACTIVE}>
+        currentFilter={FILTER_OPTION_ACTIVE}
+        handleFilter={mockClickHandler}>
         All
       </FilterLink>
     );
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('triggers handleSetFilter when filter button is clicked', () => {
-    const handleSetFilter = jest.spyOn(FilterLink.prototype, 'handleSetFilter');
+  it('triggers handleToggleTodo when todo item is clicked', () => {
     const wrapper = mount(
       <FilterLink
         filter={mockFilterOption}
-        currentFilter={FILTER_OPTION_ACTIVE}>
+        currentFilter={FILTER_OPTION_ACTIVE}
+        handleFilter={mockClickHandler}>
         All
       </FilterLink>
     );
-    wrapper.find('button').simulate('click');
-    expect(handleSetFilter).toHaveBeenCalledTimes(1);
+    wrapper.find('button').first().simulate('click');
+    expect(mockClickHandler).toHaveBeenCalledTimes(1);
   });
 
 });

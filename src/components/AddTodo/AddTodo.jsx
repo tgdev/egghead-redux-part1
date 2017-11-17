@@ -7,7 +7,10 @@ const AddTodo = ({ handleAddTodo }) => {
     <input key='add-todo-input' type="text" ref={node => { input = node; }} />,
     <button
       key='add-todo-btn'
-      onClick={handleAddTodo}>
+      onClick={() => {
+        handleAddTodo(input.value);
+        input.value = '';
+      }}>
       Add Todo
     </button>
   ];
