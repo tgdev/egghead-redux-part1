@@ -1,7 +1,7 @@
 import deepFreeze from 'deep-freeze';
 
-import { ACTION_SET_VISIBILITY_FILTER } from '../constants/action-types';
-import { FILTER_OPTION_ALL, FILTER_OPTION_ACTIVE } from '../constants/visibility-filter-options';
+import { ACTION_SET_VISIBILITY_FILTER } from 'constants/action-types';
+import { FILTER_OPTION_ALL, FILTER_OPTION_ACTIVE } from 'constants/visibility-filter-options';
 
 import visibilityFilter from './visibility-filter.reducer';
 
