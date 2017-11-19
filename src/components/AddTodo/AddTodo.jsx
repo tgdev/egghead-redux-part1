@@ -1,11 +1,10 @@
 import React from 'react';
 import uuidv4 from 'uuid/v4';
-
-import store from '../../store';
+import PropTypes from 'prop-types';
 
 import { ACTION_ADD_TODO } from 'constants/action-types';
 
-const AddTodo = () => {
+const AddTodo = (props, { store }) => {
   let input;
 
   return [
@@ -23,6 +22,10 @@ const AddTodo = () => {
       Add Todo
     </button>
   ];
+};
+
+AddTodo.contextTypes = {
+  store: PropTypes.object
 };
 
 export default AddTodo;

@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 
 import { ACTION_SET_VISIBILITY_FILTER } from 'constants/action-types';
 
-import store from '../../store';
-
 import FilterLink from './FilterLink';
 
 class FilterLinkContainer extends Component {
   componentDidMount() {
+    const { store } = this.context;
     store.subscribe(() => {
       this.forceUpdate();
     });
@@ -19,6 +18,7 @@ class FilterLinkContainer extends Component {
   }
 
   render() {
+    const { store } = this.context;
     const { filter, children } = this.props;
     const { visibilityFilter } = store.getState();
     const isActive = filter === visibilityFilter;
@@ -41,6 +41,10 @@ class FilterLinkContainer extends Component {
 FilterLinkContainer.propTypes = {
   filter: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired
+};
+
+FilterLinkContainer.contextTypes = {
+  store: PropTypes.object
 };
 
 export default FilterLinkContainer;
