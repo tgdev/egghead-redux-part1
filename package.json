@@ -72,6 +72,7 @@
     "replace": "^0.3.0",
     "rimraf": "^2.6.2",
     "uglifyjs-webpack-plugin": "^1.0.1",
+    "uuid": "^3.1.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
     "webpack-merge": "^4.1.1"

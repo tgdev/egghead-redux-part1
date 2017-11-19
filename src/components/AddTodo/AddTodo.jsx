@@ -1,23 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import uuidv4 from 'uuid/v4';
 
-const AddTodo = ({ handleAddTodo }) => {
+import store from '../../store';
+
+import { ACTION_ADD_TODO } from 'constants/action-types';
+
+const AddTodo = () => {
   let input;
+
   return [
     <input key='add-todo-input' type="text" ref={node => { input = node; }} />,
     <button
       key='add-todo-btn'
       onClick={() => {
-        handleAddTodo(input.value);
+        store.dispatch({
+          type: ACTION_ADD_TODO,
+          id: uuidv4(),
+          text: input.value
+        });
         input.value = '';
       }}>
       Add Todo
     </button>
   ];
-};
-
-AddTodo.propTypes = {
-  handleAddTodo: PropTypes.func.isRequired
 };
 
 export default AddTodo;

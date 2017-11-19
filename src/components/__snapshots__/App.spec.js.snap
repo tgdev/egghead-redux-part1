@@ -2,39 +2,16 @@
 
 exports[`App component renders TodoApp correctly with no todos 1`] = `
 <div>
-  <AddTodo
-    handleAddTodo={[Function]}
-  />
-  <TodoList
-    handleTodos={[Function]}
-    todos={Array []}
-  />
+  <AddTodo />
+  <TodoListContainer />
   <TodoFooter />
 </div>
 `;
 
 exports[`App component renders TodoApp correctly with saved todos 1`] = `
 <div>
-  <AddTodo
-    handleAddTodo={[Function]}
-  />
-  <TodoList
-    handleTodos={[Function]}
-    todos={
-      Array [
-        Object {
-          "completed": false,
-          "id": 0,
-          "text": "Learn Redux",
-        },
-        Object {
-          "completed": false,
-          "id": 1,
-          "text": "Master Redux",
-        },
-      ]
-    }
-  />
+  <AddTodo />
+  <TodoListContainer />
   <TodoFooter />
 </div>
 `;

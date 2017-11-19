@@ -1,26 +1,25 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import AddTodo from './AddTodo';
 
 describe('AddTodo component', () => {
 
-  let mockAddHandler = jest.fn();
-
-  afterEach(() => {
-    mockAddHandler.mockReset();
-  });
+  // let mockAddHandler = jest.fn();
+  //
+  // afterEach(() => {
+  //   mockAddHandler.mockReset();
+  // });
 
   it('renders AddTodo correctly', () => {
-    const wrapper = shallow(<AddTodo handleAddTodo={mockAddHandler} />);
+    const wrapper = shallow(<AddTodo />);
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('triggers handleAddTodo when "Add Todo" button is clicked', () => {
-    // const handleAddTodo = jest.spyOn(AddTodo.prototype, 'handleAddTodo');
-    const wrapper = mount(<AddTodo handleAddTodo={mockAddHandler} />);
-    wrapper.find('button').first().simulate('click');
-    expect(mockAddHandler).toHaveBeenCalledTimes(1);
-  });
+  // it('triggers handleAddTodo when "Add Todo" button is clicked', () => {
+  //   const wrapper = mount(<AddTodo />);
+  //   wrapper.find('button').first().simulate('click');
+  //   expect(mockAddHandler).toHaveBeenCalledTimes(1);
+  // });
 
 });
