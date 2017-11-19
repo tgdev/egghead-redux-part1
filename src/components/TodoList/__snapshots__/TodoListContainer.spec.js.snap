@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoListContainer component renders TodoListContainer correctly 1`] = `
+<TodoList
+  handleTodos={[Function]}
+  todos={Array []}
+/>
+`;
