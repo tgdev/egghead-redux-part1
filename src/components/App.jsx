@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AddTodo from './AddTodo/AddTodo';
+import AddTodoContainer from './AddTodo/AddTodoContainer';
 import TodoListContainer from './TodoList/TodoListContainer';
 import TodoFooter from './TodoFooter/TodoFooter';
 
@@ -8,7 +8,7 @@ const TodoApp = () => {
 
   return (
     <div>
-      <AddTodo />
+      <AddTodoContainer />
       <TodoListContainer />
       <TodoFooter />
     </div>

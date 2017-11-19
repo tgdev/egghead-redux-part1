@@ -3,6 +3,7 @@
 exports[`FilterLinkContainer component renders FilterLinkContainer correctly 1`] = `
 <FilterLink
   active={true}
+  filter="SHOW_ALL"
   handleFilter={[Function]}
 >
   All

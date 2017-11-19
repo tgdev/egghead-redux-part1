@@ -5,15 +5,15 @@ exports[`TodoList component renders TodoList correctly 1`] = `
   <Todo
     completed={false}
     handleTodo={[Function]}
-    id="4160d35a-5333-4734-a8e6-fc1bc8a00332"
-    key="4160d35a-5333-4734-a8e6-fc1bc8a00332"
+    id="todo-id-0"
+    key="todo-id-0"
     text="Learn Redux"
   />
   <Todo
     completed={false}
     handleTodo={[Function]}
-    id="e55f3777-1feb-42ff-beb7-85ff447dd0ea"
-    key="e55f3777-1feb-42ff-beb7-85ff447dd0ea"
+    id="todo-id-1"
+    key="todo-id-1"
     text="Master Redux"
   />
 </ul>
