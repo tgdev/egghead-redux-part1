@@ -1,11 +1,13 @@
+import uuidv4 from 'uuid/v4';
+
 // updated todos
 export default [
   {
-    id: 0,
+    id: uuidv4(),
     text: 'Learn Redux',
     completed: true
   }, {
-    id: 1,
+    id: uuidv4(),
     text: 'Master Redux',
     completed: false
   }
