@@ -19,10 +19,13 @@ const TodoList = ({ todos, handleTodos }) => {
 };
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired
-  })).isRequired,
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired
+    }).isRequired
+  ).isRequired,
   handleTodos: PropTypes.func.isRequired
 };
 
