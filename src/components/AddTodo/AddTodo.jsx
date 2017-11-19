@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { ACTION_ADD_TODO } from 'constants/action-types';
 
-const AddTodo = (props, { store }) => {
+const AddTodo = ({ dispatch }) => {
   let input;
 
   return [
@@ -12,7 +12,7 @@ const AddTodo = (props, { store }) => {
     <button
       key='add-todo-btn'
       onClick={() => {
-        store.dispatch({
+        dispatch({
           type: ACTION_ADD_TODO,
           id: uuidv4(),
           text: input.value
@@ -24,8 +24,8 @@ const AddTodo = (props, { store }) => {
   ];
 };
 
-AddTodo.contextTypes = {
-  store: PropTypes.object
+AddTodo.propTypes = {
+  dispatch: PropTypes.func
 };
 
 export default AddTodo;
