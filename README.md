@@ -14,13 +14,14 @@ Dan Abramov's course on [egghead.io](https://egghead.io/courses/getting-started-
 - **ESLint:**  File linting
 - **Webpack:** Asset bundling
 - **Jest:**    Unit testing
-- **React:**   UI Components (coming soon)
-- **Redux:**   App state management (coming soon)
+- **Enzyme:**  Snapshot testing React components
+- **React:**   UI Components
+- **Redux:**   App state management
 
 
 ### Getting started
 
-**Fire up local dev server**
+**Fire up local dev server and watch tests**
 
 ```bash
 yarn start
@@ -30,6 +31,23 @@ yarn start
 - Watches `js` files for lint errors
 - Opens new browser tab at `http://localhost:8080`
 
+**Fire up server only**
+
+```bash
+yarn serve
+```
+
+**Watch Jest tests only**
+
+```bash
+yarn test:watch
+```
+
+**Output test coverage to terminal**
+
+```bash
+yarn test:coverage
+```
 
 ### Contributing
 
