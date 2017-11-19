@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component renders TodoApp correctly with no todos 1`] = `
-<div>
-  <Connect(AddTodo) />
-  <Connect(TodoList) />
-  <TodoFooter />
-</div>
-`;
-
-exports[`App component renders TodoApp correctly with saved todos 1`] = `
+exports[`App component renders TodoApp correctly 1`] = `
 <div>
   <Connect(AddTodo) />
   <Connect(TodoList) />
