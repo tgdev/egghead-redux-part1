@@ -7,6 +7,12 @@ exports[`FilterLink component renders FilterLink correctly 1`] = `
 `;
 
 exports[`FilterLink component renders current filter differently to other filters 1`] = `
+<span>
+  All
+</span>
+`;
+
+exports[`FilterLink component renders current filter differently to other filters 2`] = `
 <button
   onClick={[Function]}
 >

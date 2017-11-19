@@ -1,41 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { FILTER_OPTION_ALL, FILTER_OPTION_ACTIVE, FILTER_OPTION_COMPLETED } from 'constants/visibility-filter-options';
 
-import FilterLink from 'components/FilterLink/FilterLink';
+import FilterLinkContainer from 'components/FilterLink/FilterLinkContainer';
 
-const TodoFooter = ({ visibilityFilter, handleFilters }) => {
+const TodoFooter = () => {
   return (
     <p>Show:
       {' '}
-      <FilterLink
-        filter={FILTER_OPTION_ALL}
-        currentFilter={visibilityFilter}
-        handleFilter={handleFilters}>
+      <FilterLinkContainer
+        filter={FILTER_OPTION_ALL}>
         All
-      </FilterLink>
+      </FilterLinkContainer>
       {' '}
-      <FilterLink
-        filter={FILTER_OPTION_ACTIVE}
-        currentFilter={visibilityFilter}
-        handleFilter={handleFilters}>
+      <FilterLinkContainer
+        filter={FILTER_OPTION_ACTIVE}>
         Active
-      </FilterLink>
+      </FilterLinkContainer>
       {' '}
-      <FilterLink
-        filter={FILTER_OPTION_COMPLETED}
-        currentFilter={visibilityFilter}
-        handleFilter={handleFilters}>
+      <FilterLinkContainer
+        filter={FILTER_OPTION_COMPLETED}>
         Completed
-      </FilterLink>
+      </FilterLinkContainer>
     </p>
   );
-};
-
-TodoFooter.propTypes = {
-  visibilityFilter: PropTypes.string.isRequired,
-  handleFilters: PropTypes.func.isRequired
 };
 
 export default TodoFooter;

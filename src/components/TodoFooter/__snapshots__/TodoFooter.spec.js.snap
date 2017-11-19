@@ -4,28 +4,22 @@ exports[`TodoFooter component renders TodoFooter correctly 1`] = `
 <p>
   Show:
    
-  <FilterLink
-    currentFilter="SHOW_ALL"
+  <FilterLinkContainer
     filter="SHOW_ALL"
-    handleFilter={[Function]}
   >
     All
-  </FilterLink>
+  </FilterLinkContainer>
    
-  <FilterLink
-    currentFilter="SHOW_ALL"
+  <FilterLinkContainer
     filter="SHOW_ACTIVE"
-    handleFilter={[Function]}
   >
     Active
-  </FilterLink>
+  </FilterLinkContainer>
    
-  <FilterLink
-    currentFilter="SHOW_ALL"
+  <FilterLinkContainer
     filter="SHOW_COMPLETED"
-    handleFilter={[Function]}
   >
     Completed
-  </FilterLink>
+  </FilterLinkContainer>
 </p>
 `;

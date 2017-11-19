@@ -1,27 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FilterLink = ({ filter, children, currentFilter, handleFilter }) => {
-  if (filter === currentFilter) {
+const FilterLink = ({ active, children, handleFilter }) => {
+  if (active) {
     return <span>{children}</span>;
   }
 
   return (
-    <button onClick={() => handleFilter(filter)}>
+    <button onClick={() => handleFilter()}>
       {children}
     </button>
   );
 };
 
 FilterLink.propTypes = {
-  filter: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
   children: PropTypes.string.isRequired,
-  currentFilter: PropTypes.string.isRequired,
   handleFilter: PropTypes.func
 };
-
-// FilterLink.defaultProps = {
-//   handleFilter: undefined
-// };
 
 export default FilterLink;

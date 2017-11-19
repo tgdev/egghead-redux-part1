@@ -1,14 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import { FILTER_OPTION_ALL, FILTER_OPTION_ACTIVE } from 'constants/visibility-filter-options';
-
 import FilterLink from './FilterLink';
 
 describe('FilterLink component', () => {
 
-  const mockFilterOption = FILTER_OPTION_ALL;
-  const mockCurrentFilter = FILTER_OPTION_ALL;
+  const mockActive = true;
+  const mockNotActive = false;
+
 
   let mockClickHandler = jest.fn();
 
@@ -19,8 +18,7 @@ describe('FilterLink component', () => {
   it('renders FilterLink correctly', () => {
     const wrapper = shallow(
       <FilterLink
-        filter={mockFilterOption}
-        currentFilter={mockCurrentFilter}
+        active={mockActive}
         handleFilter={mockClickHandler}>
         All
       </FilterLink>
@@ -31,8 +29,7 @@ describe('FilterLink component', () => {
   it('renders with required children', () => {
     const wrapper = shallow(
       <FilterLink
-        filter={mockFilterOption}
-        currentFilter={mockCurrentFilter}
+        active={mockActive}
         handleFilter={mockClickHandler}>
         All
       </FilterLink>
@@ -40,38 +37,30 @@ describe('FilterLink component', () => {
     expect(wrapper.children().length).toBe(1);
   });
 
-  it('renders with required filter and currentFilter props', () => {
-    const wrapper = mount(
-      <FilterLink
-        filter={mockFilterOption}
-        currentFilter={mockCurrentFilter}
-        handleFilter={mockClickHandler}>
-        All
-      </FilterLink>
-    );
-    const filterProp = wrapper.props().filter;
-    const curentFilterProp = wrapper.props().currentFilter;
-    expect(filterProp).toEqual(FILTER_OPTION_ALL);
-    expect(curentFilterProp).toEqual(FILTER_OPTION_ALL);
-  });
-
   it('renders current filter differently to other filters', () => {
-    const wrapper = shallow(
+    const wrapperActive = shallow(
       <FilterLink
-        filter={mockFilterOption}
-        currentFilter={FILTER_OPTION_ACTIVE}
+        active={mockActive}
         handleFilter={mockClickHandler}>
         All
       </FilterLink>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapperActive).toMatchSnapshot();
+
+    const wrapperInactive = shallow(
+      <FilterLink
+        active={mockNotActive}
+        handleFilter={mockClickHandler}>
+        All
+      </FilterLink>
+    );
+    expect(wrapperInactive).toMatchSnapshot();
   });
 
   it('triggers handleToggleTodo when todo item is clicked', () => {
     const wrapper = mount(
       <FilterLink
-        filter={mockFilterOption}
-        currentFilter={FILTER_OPTION_ACTIVE}
+        active={mockNotActive}
         handleFilter={mockClickHandler}>
         All
       </FilterLink>

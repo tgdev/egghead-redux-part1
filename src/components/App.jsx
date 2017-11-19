@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ACTION_ADD_TODO, ACTION_TOGGLE_TODO, ACTION_SET_VISIBILITY_FILTER } from 'constants/action-types';
+import { ACTION_ADD_TODO, ACTION_TOGGLE_TODO } from 'constants/action-types';
 
 import getVisibleTodos from 'utils/get-visible-todos';
 
@@ -37,14 +37,7 @@ const TodoApp = ({ todos, visibilityFilter }) => {
           });
         }} />
 
-      <TodoFooter
-        visibilityFilter={visibilityFilter}
-        handleFilters={filter => {
-          store.dispatch({
-            type: ACTION_SET_VISIBILITY_FILTER,
-            filter
-          });
-        }} />
+      <TodoFooter />
 
     </div>
   );
