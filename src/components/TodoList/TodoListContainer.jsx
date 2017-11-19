@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { ACTION_TOGGLE_TODO } from 'constants/action-types';
+import { toggleTodo } from 'actions/todo.actions';
 
 import getVisibleTodos from 'utils/get-visible-todos';
 
@@ -15,10 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleTodos: id => {
-      dispatch({
-        type: ACTION_TOGGLE_TODO,
-        id
-      });
+      dispatch(toggleTodo(id));
     }
   };
 };

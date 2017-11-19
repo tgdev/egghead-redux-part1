@@ -19,6 +19,7 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
+      actions: resolve('./src/actions/'),
       components: resolve('./src/components/'),
       constants: resolve('./src/constants/'),
       mocks: resolve('./src/mocks/'),

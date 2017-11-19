@@ -1,8 +1,7 @@
 import React from 'react';
-import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
 
-import { ACTION_ADD_TODO } from 'constants/action-types';
+import { addTodo } from 'actions/todo.actions';
 
 const AddTodo = ({ dispatch }) => {
   let input;
@@ -12,11 +11,7 @@ const AddTodo = ({ dispatch }) => {
     <button
       key='add-todo-btn'
       onClick={() => {
-        dispatch({
-          type: ACTION_ADD_TODO,
-          id: uuidv4(),
-          text: input.value
-        });
+        dispatch(addTodo(input.value));
         input.value = '';
       }}>
       Add Todo

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { ACTION_SET_VISIBILITY_FILTER } from 'constants/action-types';
+import { setVisibilityFilter } from 'actions/visibility-filter.actions';
 
 import FilterLink from './FilterLink';
 
@@ -14,10 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     handleFilter: () => {
-      dispatch({
-        type: ACTION_SET_VISIBILITY_FILTER,
-        filter: ownProps.filter
-      });
+      dispatch(setVisibilityFilter(ownProps.filter));
     }
   };
 };
